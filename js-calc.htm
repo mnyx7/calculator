@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Calculator</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" />
+		<style>
+			body { 
+				display: flex;
+			}
+			#calculator {
+				margin: 50px auto;
+				padding: 20px;
+				background: #aaa;
+				border-radius: 10px;
+				box-shadow: 0 0 10px black;
+			}
+			button, input {
+				margin: 10px 5px;
+				padding: 10px;
+				width: 100px;
+				outline: none;
+				border-radius: 5px;
+				box-shadow: 3px 3px #333;
+				font: bold 3em Arial;
+				color: #333;
+			}
+			input {
+				width: 420px;
+				box-shadow: -2px -2px #333;
+				text-align: right;
+				font-family: 'Audiowide', cursive;
+				color: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="calculator">
+			<div class="row">
+				<input id="display" type="text" />
+			</div>
+			<div class="row">
+				<button onclick="press('7')">7</button>
+				<button onclick="press('8')">8</button>
+				<button onclick="press('9')">9</button>
+				<button onclick="press('/')">÷</button>
+			</div>
+			<div class="row">
+				<button onclick="press('4')">4</button>
+				<button onclick="press('5')">5</button>
+				<button onclick="press('6')">6</button>
+				<button onclick="press('*')">×</button>
+			</div>
+			<div class="row">
+				<button onclick="press('1')">1</button>
+				<button onclick="press('2')">2</button>
+				<button onclick="press('3')">3</button>
+				<button onclick="press('-')">-</button>
+			</div>
+			<div class="row">
+				<button onclick="clean()">С</button>
+				<button onclick="press('0')">0</button>
+				<button onclick="press('+')">+</button>
+				<button onclick="calc()">=</button>
+			</div>
+		</div>
+		
+		<script>
+			const display = document.getElementById("display");
+			
+			function clean() {
+				display.value = "";
+			}
+		
+			function calc() {
+				display.value = eval(display.value);
+			}
+			
+			function press(x) {
+				display.value += x;
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
